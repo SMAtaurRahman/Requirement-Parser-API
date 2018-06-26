@@ -1,5 +1,11 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
+header('Content-Type: application/json');
+
 require __DIR__ . '/Parser.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['requirement'])) {
@@ -20,13 +26,8 @@ $requirements = array_map(function($value) {
 
 //echo '<pre>';
 //print_r($requirements);
-//echo '</pre>';
+//echo '</pre>';die;
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Credentials: true");
-header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
-header('Content-Type: application/json');
 echo json_encode($requirements);
 exit();
 
