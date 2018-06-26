@@ -221,7 +221,7 @@ class Parser {
             return true;
         }
 
-        return false;
+        return 'None';
     }
 
     public function getInterview()
@@ -234,7 +234,7 @@ class Parser {
             return true;
         }
 
-        return false;
+        return 'None';
     }
 
     public function getDrugTest()
@@ -247,7 +247,7 @@ class Parser {
             return true;
         }
 
-        return false;
+        return 'None';
     }
 
     public function returnRequirements()
