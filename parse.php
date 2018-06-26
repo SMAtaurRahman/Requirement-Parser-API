@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['requirement'])) {
     die('Only Post Method is allowed');
 }
 
-$requirementBody = $_POST['requirement'];
+$requirementBody = strip_tags($_POST['requirement']);
 
 $requirements = explode('##########', $requirementBody);
 

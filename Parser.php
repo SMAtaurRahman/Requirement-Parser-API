@@ -170,9 +170,9 @@ class Parser {
 
     public function getExperience()
     {
-        preg_match('#years of experience[\s\S]*?([\d]+)#i', $this->text, $experience);
+        preg_match('#years of experience[\s\S]*?([\d]+[\+]?)#i', $this->text, $experience);
 
-        return (int) trim($experience[1] ?? '');
+        return trim($experience[1] ?? '');
     }
 
     public function getSkill()
