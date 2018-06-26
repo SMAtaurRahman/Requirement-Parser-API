@@ -22,7 +22,10 @@ $requirements = array_map(function($value) {
 //print_r($requirements);
 //echo '</pre>';
 
-
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Requested-With, Authorization');
 header('Content-Type: application/json');
 echo json_encode($requirements);
 exit();
